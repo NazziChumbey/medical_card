@@ -1,0 +1,12 @@
+<input #searchBox class="header__search"
+       (input)="search(searchBox.value)"
+       placeholder="Find patient"/>
+<div class="header__links">
+  <a class="header__link link_go_back" (click)="goBack()">
+    <b>Go back</b>
+  </a>
+  <a class="header__link link_create_patient" routerLink="/create-patient">
+    <b>Add patient</b>
+  </a>
+</div>
+

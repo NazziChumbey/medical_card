@@ -1,0 +1,178 @@
+/* START MAIN  Controlls Form */
+
+.main-controlls-form {
+  padding: 12px 50px;
+  margin: 10px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(89.72deg, #95FFA6 0%, #008F7A 100%), #95FFA6;
+}
+.main-controlls{
+  display: flex;
+}
+
+.main__username {
+  font-size: 24px;
+}
+.main__user-years-old {}
+
+.main__edit-btn{
+  margin-right: 20px;
+}
+
+.main__edit-btn, .main__delete-btn {
+  width: 100px;
+  height: 43px;
+
+  background: #FFFFFF;
+  border-radius: 40px;
+  border: none;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 27px;
+
+  color: #000000;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+
+/* END MAIN  Controlls Form */
+
+/* START MAIN USER CARD*/
+
+.main-user-card {
+  display: flex;
+  justify-content: space-between;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+.main-user-info {
+  flex-basis: 35%;
+
+  padding:0 10px;
+
+  display: grid;
+  grid-template: repeat(5, 55px) / 150px auto;
+}
+
+.main__birthday-title {}
+.main__birthday-answer {}
+.main__sex-title {}
+.main__sex-answer {}
+.main__country-title {}
+.main__country-answer {}
+.main__state-title {}
+.main__state-answer {}
+.main__address-title {}
+.main__address-answer {}
+
+
+.main-comments {
+  margin-left: 15px;
+  padding: 15px;
+
+  flex-basis: 60%;
+  height: 85vh;
+
+  border: 7px solid #95FFA6;
+  border-radius: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main__comments-title {
+  margin-bottom: 15px;
+}
+
+.main-comments-desc {
+  padding:0 15px 15px 0;
+
+  overflow-y: auto;
+
+  height: 100%;
+}
+
+.main-comment {
+  padding: 5px 15px;
+  margin: 15px 0;
+  background: #95FFA6;
+  box-shadow: 10px 10px 10px rgba(22, 199, 82, 0.4);
+}
+
+.main__comment-data {
+  font-weight: bold;
+  font-size: 14px;
+
+  margin: 10px 0 5px 0;
+}
+
+.main__comment {
+  text-align: justify;
+}
+
+.main-comments-add {
+  width: 100%;
+  height: 50px;
+
+  margin-top: 15px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__comment-add-field {
+  width: 75%;
+  height: 40px;
+
+  border: 3px solid #95FFA6;
+  border-radius: 40px;
+
+  font-size: 18px;
+
+  outline:none;
+
+  padding: 0 15px;
+}
+.main__comment-add-bnt {
+  width: 100px;
+  height: 40px;
+
+  cursor: pointer;
+
+  background: #FFFFFF;
+
+  border: 3px solid #95FFA6;
+  border-radius: 40px;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 27px;
+  /* identical to box height */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition-duration: 0.5s;
+}
+.main__comment-add-bnt:hover{
+  background: #95FFA6;
+}
+/* END MAIN USER CARD */

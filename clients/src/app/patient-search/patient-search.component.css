@@ -1,0 +1,50 @@
+.header__search{
+  width: 400px;
+  height: 43px;
+
+  background: #FFFFFF;
+
+  border-radius: 40px;
+  border: none;
+
+  padding: 0 10px;
+
+  outline:none;
+}
+
+.header__links{
+  width: 350px;
+  height: auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.link_go_back{
+}
+
+.header__link {
+  width: 150px;
+  height: 43px;
+
+  background: #FFFFFF;
+  border-radius: 40px;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 27px;
+  /* identical to box height */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #000000;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+

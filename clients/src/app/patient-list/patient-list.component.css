@@ -1,0 +1,59 @@
+.sidebar__items {
+
+  padding: 0;
+}
+
+.sidebar__item{
+  list-style-type: none;
+
+  width: 270px;
+  height: 50px;
+
+  margin: 10px 0;
+
+  background: rgba(149, 255, 166, 0.5);
+  border-radius: 0px 50px 50px 0px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  transition-duration: 0.5s ;
+}
+.sidebar__item:hover {
+  width: 290px;
+
+  background: #95FFA6;
+}
+
+.sidebar__icon{
+  width: 35px;
+  height: 35px;
+}
+
+.sidebar__link{
+  display: flex;
+  flex-direction: column;
+
+  text-decoration: none;
+}
+
+.sidebar__name{
+  font-family: Sansation;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 27px;
+
+  color: #000000;
+}
+
+.sidebar__birthday{
+  font-family: Sansation;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #000000;
+}

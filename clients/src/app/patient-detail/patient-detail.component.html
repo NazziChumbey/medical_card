@@ -1,0 +1,89 @@
+<!--<div *ngIf="selectedPatient">-->
+<!--  <nav>-->
+<!--    <div class="nav-wrapper">-->
+<!--      <ul id="nav-mobile" class="hide-on-med-and-down">-->
+<!--        <li class="left" style="margin-left: 20px; margin-right: 100px">-->
+<!--          <h5>{{selectedPatient.firstName | uppercase}} {{selectedPatient.lastName | uppercase}} </h5></li>-->
+<!--        <li class="center">{{age}} years old</li>-->
+<!--        <li class="right">-->
+<!--          <button style="margin-right: 10px; margin-left: 10px; " class="waves-effect waves-light btn"-->
+<!--                  (click)="deletePatient(selectedPatient)">Delete User-->
+<!--          </button>-->
+<!--        </li>-->
+<!--        <li class="right"><a routerLink="/edit-patient/{{selectedPatient.id}}">Edit</a></li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </nav>-->
+
+<!--  <div style="float:left; margin-left: 20px;">-->
+<!--    <ul>-->
+<!--      <li>-->
+<!--        <span class="label">Date of birth</span>-->
+<!--        {{selectedPatient.dateOfBirth.toString()}}-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <span class="label">Sex</span>-->
+<!--        {{selectedPatient.sex}}-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <span class="label">Country</span>-->
+<!--        <span>{{selectedPatient.country}}</span>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <span class="label">State</span>-->
+<!--        {{selectedPatient.state}}-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <span class="label">Address</span>-->
+<!--        {{selectedPatient.address}}-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="main-controlls-form" *ngIf="selectedPatient">
+  <span class="main__username">{{selectedPatient.firstName | uppercase}} {{selectedPatient.lastName | uppercase}}</span>
+  <span class="main__user-years-old">{{age}} years old</span>
+  <div class="main-controlls">
+    <button class="main__edit-btn" routerLink="/edit-patient/{{selectedPatient.id}}">Edit</button>
+    <button class="main__delete-btn" (click)="deletePatient(selectedPatient)">Delete</button>
+  </div>
+</div>
+<div class="main-user-card">
+  <div class="main-user-info">
+    <p class="main__birthday-title">Date of Birth:</p>
+    <p class="main__birthday-answer">{{selectedPatient.dateOfBirth | date}}</p>
+
+    <p class="main__sex-title">Sex:</p>
+    <p class="main__sex-answer">{{selectedPatient.sex}}</p>
+
+    <p class="main__country-title">Country:</p>
+    <p class="main__country-answer">{{selectedPatient.country}}</p>
+
+    <p class="main__state-title">State:</p>
+    <p class="main__state-answer">{{selectedPatient.state}}</p>
+
+    <p class="main__address-title">Address:</p>
+    <p class="main__address-answer">{{selectedPatient.address}}</p>
+  </div>
+  <div class="main-comments">
+    <h1 class="main__comments-title"> Comments:
+    </h1>
+
+    <div class="main-comments-desc" *ngIf="comments">
+      <div class="main-comment" *ngFor="let comment of comments">
+        <p class="main__comment-data">
+          {{ comment.dateOfWriting | date}}
+        </p>
+        <p class="main__comment">
+          {{comment.comment}}
+        </p>
+      </div>
+    </div>
+
+    <div class="main-comments-add">
+      <input type="text" class="main__comment-add-field" [(ngModel)]="comment_create.comment" placeholder="Comment" name="comment">
+      <button class="main__comment-add-bnt" (click)="createComment()">Add</button>
+    </div>
+  </div>
+</div>

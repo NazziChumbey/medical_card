@@ -1,0 +1,9 @@
+<ul class="sidebar__items">
+  <li class="sidebar__item" *ngFor="let patient of patients ">
+    <a class="sidebar__link "routerLink="/patient/{{patient.id}}">
+      <span class="sidebar__name">{{patient.firstName}} {{patient.lastName}}</span>
+      <span class="sidebar__birthday">{{patient.dateOfBirth | date}}</span>
+    </a>
+    <img src="assets/img/user_man.png" alt="" class="sidebar__icon">
+  </li>
+</ul>

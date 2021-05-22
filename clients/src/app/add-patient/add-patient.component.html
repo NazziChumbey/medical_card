@@ -1,0 +1,13 @@
+<div class="main-add-patient">
+  <h1 class="title">ADD PATIENT</h1>
+  <input class="add-patient__field" [(ngModel)]="patient.firstName" placeholder="First Name" name="firstName"  id="firstName">
+  <input class="add-patient__field" [(ngModel)]="patient.lastName" placeholder="Last name" name="lastName"  id="lastName">
+  <input class="add-patient__field" [(ngModel)]="patient.dateOfBirth" placeholder="Date of birth" type="date" name="dateOfBirth" id="dateOfBirth">
+  <input class="add-patient__field" [(ngModel)]="patient.sex" placeholder="Sex" name="sex"  id="sex">
+  <input class="add-patient__field" [(ngModel)]="patient.country" placeholder="Country" name="country"  id="country">
+  <input class="add-patient__field" [(ngModel)]="patient.state" placeholder="State" name="state"  id="state">
+  <input class="add-patient__field" [(ngModel)]="patient.address" placeholder="Address" name="address"  id="address">
+
+  <button class="create-patient__bnt" (click)="createPatient()">Create</button>
+
+</div>

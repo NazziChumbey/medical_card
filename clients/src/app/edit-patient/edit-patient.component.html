@@ -1,0 +1,13 @@
+<div class="main-edit-form" *ngIf="change_patient">
+  <h1 class="title">EDIT PROFILE</h1>
+
+  <input class="edit__field" [(ngModel)]="change_patient.firstName" placeholder="First Name" type="text" id="first_name">
+  <input class="edit__field" [(ngModel)]="change_patient.lastName" placeholder="Last Name" type="text" id="last_name">
+  <input class="edit__field" [(ngModel)]="change_patient.dateOfBirth" placeholder="Date of Birth" type="date" id="dateOfBirth">
+  <input class="edit__field" [(ngModel)]="change_patient.sex" placeholder="Sex" type="text" id="sex">
+  <input class="edit__field" [(ngModel)]="change_patient.country" placeholder="Country" id="country">
+  <input class="edit__field" [(ngModel)]="change_patient.state" placeholder="State" type="text" id="state">
+  <input class="edit__field" [(ngModel)]="change_patient.address" placeholder="Address" id="address">
+
+  <button class="edit__save-btn" (click)="updatePatient(change_patient)">Update Patient</button>
+</div>
