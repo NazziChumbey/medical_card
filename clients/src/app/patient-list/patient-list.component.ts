@@ -29,6 +29,7 @@ export class PatientListComponent implements OnInit {
       this.loadPatient();
     });
 
+
     this.patientSearchService.subjectSearch.subscribe(value => {
       this.searchTerms.next(value);
 

@@ -7,6 +7,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {CommentService} from "../service/comment.service";
 import {PatientListComponent} from '../patient-list/patient-list.component';
+import {PatientCreatedNotifierService} from '../service/patient-created-notifier.service';
 
 @Component({
   selector: 'app-patient-detail',
@@ -27,7 +28,8 @@ export class PatientDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private patientService: PatientService,
-    private commentService: CommentService) {
+    private commentService: CommentService,
+    private patientNotifier: PatientCreatedNotifierService) {
   }
 
   ngOnInit() {
@@ -61,6 +63,8 @@ export class PatientDetailComponent implements OnInit {
     this.patientService.deletePatient(patient)
       .subscribe(data => {
         this.patients = this.patients.filter(p => p !== patient);
+        this.patientNotifier.subject.next("patient Delete");
+
         alert("Patient delete");
         this.location.back();
       });

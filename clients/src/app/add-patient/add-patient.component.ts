@@ -27,7 +27,8 @@ export class AddPatientComponent {
         this.patient.country = "";
         this.patient.state = "";
         this.patient.address = "";
-        this.patientNotifier.subject.next("patient Created")
+        this.patient.email = "";
+        this.patientNotifier.subject.next("patient Created");
       });
   }
 }

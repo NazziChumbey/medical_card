@@ -10,5 +10,6 @@ export class Patient {
   country: string;
   state: string;
   address: string;
+  email: string;
   comments: Comment;
 }
