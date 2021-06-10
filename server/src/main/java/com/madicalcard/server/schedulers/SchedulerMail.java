@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 
+import static com.madicalcard.server.controller.CommentController.commentsForEmailing;
+
 @Component
 public class SchedulerMail {
     @Autowired
@@ -23,27 +25,22 @@ public class SchedulerMail {
     @Autowired
     private PatientService patientService;
 
-
-
     //    @Scheduled(cron = "40-50 * * * *") // Формат:  секунда, минута, час, день, месяц, день недели
-    @Scheduled(fixedDelay = 50000)
+    @Scheduled(fixedDelay = 60000)
     public String sendSimpleEmail() {
-        if(CommentController.commentsForEmailing.isEmpty()){
-            System.out.println("----------");
-        } else {
-            System.out.println("++++++++++");
+        if( commentsForEmailing.size() != 0){
+            SimpleMailMessage message = new SimpleMailMessage();
+            commentsForEmailing.forEach(comment -> {
+                String date = comment.getDateOfWriting().format(DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy"));
+                message.setTo(patientService.findById(comment.getPatient().getId()).getEmail());
+                message.setSubject("Додано новий коментар! " + date);
+                message.setText(comment.getComment().toString() + "\n " + date);
+
+                this.emailSender.send(message);
+            });
+            commentsForEmailing.clear();
         }
-//        comments.forEach(comment -> {
-//            System.out.println("++++++++++"+patientService.findById(comment.getPatient().getId()).getEmail());
-//            String date = comment.getDateOfWriting().format(DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy"));
-//
-//            SimpleMailMessage message = new SimpleMailMessage();
-//            message.setTo(patientService.findById(comment.getPatient().getId()).getEmail());
-//            message.setSubject("Додано новий коментар! " + date);
-//            message.setText(comment + "\n " + date);
-//
-//            this.emailSender.send(message);
-//        });
+
         return "Email Sent!";
     }
 }

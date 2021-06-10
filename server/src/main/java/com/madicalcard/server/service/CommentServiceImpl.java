@@ -41,12 +41,12 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Comment findByIdAndPatient_Id(int id, int patientID) {
+    public Comment findByIdAndPatientId(int id, int patientID) {
         return repository.findByIdAndPatient_Id(id, patientID);
     }
 
     @Override
-    public List<Comment> findCommentByPatient_Id(int patientID) {
+    public List<Comment> findCommentByPatientId(int patientID) {
         return repository.findCommentByPatient_Id(patientID);
     }
 

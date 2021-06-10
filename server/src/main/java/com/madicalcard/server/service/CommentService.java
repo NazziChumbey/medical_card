@@ -1,7 +1,6 @@
 package com.madicalcard.server.service;
 
 import com.madicalcard.server.model.Comment;
-import org.springframework.stereotype.Service;
 
 
 import java.util.List;
@@ -14,9 +13,9 @@ public interface CommentService {
 
     List<Comment> findAll();
 
-    Comment findByIdAndPatient_Id(int id, int patientID);
+    Comment findByIdAndPatientId(int id, int patientID);
 
-    List<Comment> findCommentByPatient_Id(int patientID);
+    List<Comment> findCommentByPatientId(int patientID);
 
     Comment findById(int id);
 
