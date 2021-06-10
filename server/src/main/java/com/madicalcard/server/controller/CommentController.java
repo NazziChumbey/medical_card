@@ -8,11 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -34,9 +31,7 @@ public class CommentController {
     public Comment create(@RequestBody Comment comment, @PathVariable("patientId") int patientId){
         comment.setPatient(new Patient(patientId));
         comment.setDateOfWriting(LocalDateTime.now());
-//        System.out.println("++++++++++++++++++"+comment);
         commentsForEmailing.add(comment);
-//        System.out.println("----------------"+commentsForEmailing.size());
 
         return commentService.create(comment);
     }

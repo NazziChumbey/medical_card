@@ -25,7 +25,6 @@ public class SchedulerMail {
     @Autowired
     private PatientService patientService;
 
-    //    @Scheduled(cron = "40-50 * * * *") // Формат:  секунда, минута, час, день, месяц, день недели
     @Scheduled(fixedDelay = 60000)
     public String sendSimpleEmail() {
         if( commentsForEmailing.size() != 0){
